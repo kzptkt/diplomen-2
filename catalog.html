@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Каталог на автомобили от Америка</title>
+  <style>
+    /* Основни стилове */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+    }
+
+    /* Стилове за секцията с каталог */
+    .catalog {
+      padding: 60px 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .catalog h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      align-items: stretch; /* добавено, за еднаква височина */
+    }
+
+    .car-item {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      overflow: hidden;
+
+      display: flex;              /* добавено */
+      flex-direction: column;     /* добавено */
+      justify-content: space-between; /* добавено */
+      height: 100%;               /* добавено */
+    }
+
+    .car-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .car-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .car-item img:hover {
+      transform: scale(1.1);
+    }
+
+    .car-item h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .car-item p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      color: #555;
+      flex-grow: 1; /* заема наличното място */
+    }
+
+    .btn {
+      background: #007fe6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background 0.3s ease;
+      align-self: center;
+      margin-top: auto; /* бутонът се бута долу */
+    }
+
+    .btn:hover {
+      background: #005bb5;
+    }
+
+    /* Адаптивен дизайн */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+
+      .car-item h3 {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <section class="catalog">
+      <h2>Нашите предложения</h2>
+      <div class="car-grid">
+        <!-- Карта 1 -->
+        <div class="car-item">
+          <img src="OIP.jpg" alt="Ford Mustang" />
+          <h3>Ford Mustang 5.OL V8</h3>
+          <p>Цена: 31,000 лв.</p>
+          <a href="mustang.html" class="btn">Вижте повече</a>
+        </div>
+        <!-- Карта 2 -->
+        <div class="car-item">
+          <img src="21.webp" alt="Chevrolet Camaro" />
+          <h3>Chevrolet Camaro 6.2L V8</h3>
+          <p>Цена: 37,000 лв.</p>
+          <a href="camaro.html" class="btn">Вижте повече</a>
+        </div>
+        <!-- Карта 3 -->
+        <div class="car-item">
+          <img src="jeep-wrangler-3-6-v6-sahara-auto-4wd-euro-5-2dr-euro-5-838980409-1.webp" alt="Jeep Wrangler" />
+          <h3>Jeep Wrangler</h3>
+          <p>Цена: 40,000 лв.</p>
+          <a href="wrangler.html" class="btn">Вижте повече</a>
+        </div>
+        <!-- Карта 4 -->
+        <div class="car-item">
+          <img src="tesla 3.jpg.jpg" alt="Tesla Model 3" />
+          <h3>Tesla Model 3</h3>
+          <p>Цена: 55,000 лв.</p>
+          <a href="tesla.html" class="btn">Вижте повече</a>
+        </div>
+        <!-- Карта 5 -->
+        <div class="car-item">
+          <img src="Used-2015-Chevrolet-Corvette-Z06-1627218137.jpg" alt="Chevrolet Corvette" />
+          <h3>Chevrolet Corvette 6.2L V8</h3>
+          <p>Цена: 65,000 лв.</p>
+          <a href="corvette.html" class="btn">Вижте повече</a>
+        </div>
+        <!-- Карта 6 -->
+        <div class="car-item">
+          <img src="Used-2018-Dodge-CHARGER-RT-392-SCAT-PACK-NAV-BEATS-SUNROOF-BREMBO-REARVIEW-1638890001.jpg" alt="Dodge Charger" />
+          <h3>Dodge Charger 5.7L V8HEMI</h3>
+          <p>Цена: 41,000 лв.</p>
+          <a href="charger.html" class="btn">Вижте повече</a>
+        </div>
+    
+
+</body>
+</html>
