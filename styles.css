@@ -1,4 +1,5 @@
 /* Основни стилове */
+/* Основни стилове */
 * {
   margin: 0;
   padding: 0;
@@ -190,5 +191,701 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 50px;
+
 }
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      overflow-x: hidden;
+      
+    }
+
+    /* HEADER - УВЕЛИЧЕН */
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #1c1c1c;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+    }
+
+    /* ЛОГО - МНОГО ПО-ГОЛЯМО */
+    header .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    header img {
+      height: 80px;
+      width: auto;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 2px 8px rgba(0, 170, 255, 0.3));
+    }
+
+    header img:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 4px 12px rgba(0, 170, 255, 0.5));
+    }
+
+    /* НАВИГАЦИЯ */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      position: relative;
+      padding: 10px 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav a i {
+      font-size: 1rem;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(to right, #007fe6, #00aaff);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #2a2a2a;
+      min-width: 200px;
+      padding: 15px 0;
+      border-radius: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      margin-top: 10px;
+    }
+
+    .dropdown:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .submenu li {
+      padding: 0;
+    }
+
+    .submenu a {
+      padding: 12px 25px;
+      display: block;
+      font-size: 1rem;
+    }
+
+    .submenu a:hover {
+      background: rgba(0, 170, 255, 0.1);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('ChatGPT Image 9.06.2025 г., 21_08_13.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+      padding: 200px 20px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 82, 163, 0.3), rgba(0, 170, 255, 0.2));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+      letter-spacing: 1px;
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 35px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #00aaff;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: #ddd;
+      margin-top: 5px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #007fe6, #00aaff);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 20px rgba(0, 127, 230, 0.4);
+      border: 2px solid transparent;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #00aaff, #007fe6);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 170, 255, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #00aaff;
+      margin-left: 15px;
+    }
+
+    .btn-secondary:hover {
+      background: #00aaff;
+      border-color: #00aaff;
+    }
+
+    /* FEATURED CARS SECTION */
+    .featured-cars {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #f9f9f9 0%, #fff 100%);
+    }
+
+    .featured-cars h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      color: #1c1c1c;
+      margin-bottom: 20px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .featured-cars h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #007fe6, #00aaff);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+
+    .car-item {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .car-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 127, 230, 0.2);
+    }
+
+    .car-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .car-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .car-item-content {
+      padding: 25px;
+    }
+
+    .car-item h3 {
+      font-size: 1.6rem;
+      color: #1c1c1c;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .car-price {
+      font-size: 1.5rem;
+      color: #007fe6;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+
+    .car-features {
+      display: flex;
+      gap: 15px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    .feature-badge {
+      background: #f0f7ff;
+      color: #007fe6;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .car-item .btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    /* REVIEWS SECTION */
+    .reviews {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+      text-align: center;
+      color: #fff;
+    }
+
+    .reviews h2 {
+      font-size: 2.8rem;
+      color: #00aaff;
+      margin-bottom: 20px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    .reviews h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #007fe6, #00aaff);
+      border-radius: 2px;
+    }
+
+    .reviews .section-subtitle {
+      color: #bbb;
+      margin-bottom: 50px;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+
+    .review-item {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 35px 25px;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .review-item:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+    }
+
+    .review-img-wrapper {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 3px solid #00aaff;
+      box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .review-item:hover .review-img-wrapper {
+      transform: scale(1.1);
+    }
+
+    .review-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-stars {
+      font-size: 1.3rem;
+      color: #ffc107;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    .review-text {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #ddd;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .client-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #00aaff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+      color: #0f0f0f;
+      padding: 60px 20px 30px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+      color: #00aaff;
+      margin-bottom: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .footer-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .footer-section p {
+      line-height: 1.7;
+      color: #bbb;
+      text-align: center;
+    }
+
+    /* ✅ ЦЕНТРИРАНИ FOOTER ЛИНКОВЕ */
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-links a:hover {
+      color: #00aaff;
+      transform: translateX(4px);
+    }
+
+    .footer-links i {
+      color: #007fe6;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid transparent;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-5px);
+      border-color: currentColor;
+    }
+
+    .social-links .fa-facebook-f {
+      color: #3b5998;
+    }
+
+    .social-links .fa-instagram {
+      color: #E4405F;
+    }
+
+    .social-links .fa-youtube {
+      color: #FF0000;
+    }
+
+    footer hr {
+      border: 5;
+      border-top: 1px solid #333;
+      margin: 30px auto;
+      max-width: 1200px;
+      
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding-top: 20px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      header img {
+        height: 70px;
+      }
+
+      nav ul {
+        gap: 25px;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 0;
+      }
+
+      header img {
+        height: 60px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .header-flex {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        padding: 120px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+
+      .hero-stats {
+        gap: 30px;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .featured-cars h2,
+      .reviews h2 {
+        font-size: 2rem;
+      }
+
+      .car-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header img {
+        height: 50px;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+        padding: 8px 5px;
+      }
+
+      nav a i {
+        display: none;
+        
+      }
+    } 
